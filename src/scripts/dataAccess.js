@@ -5,7 +5,31 @@
         state with fetch() call to the API.
 */
 
-const API = "https://uqyoy.sse.codesandbox.io/api";
+// access API craftRequest and store in applicationState
+export const fetchCraftRequests = () => {
+  return fetch(`${API}/craftRequests`)
+      .then(response => response.json())
+      .then(
+          (request) => {
+              // Store the external state in application state
+              applicationState.craftRequests = request
+          }
+      )
+}
+
+// access API craftCraftType and store in applicationState
+export const fetchCraftTypes = () => {
+  return fetch(`${API}/craftTypes`)
+      .then(response => response.json())
+      .then(
+          (craftType) => {
+              // Store the external state in application state
+              applicationState.craftCraftTypes = craftType
+          }
+      )
+}
+
+const API = "http://localhost:8088";
 
 const applicationState = {
   craftTypes: [],
@@ -19,9 +43,9 @@ const applicationState = {
   }
 };
 
-/* 
+/*
   Once a new craft completion has been saved in the API,
-  add all of the ingredients chosen by the user. 
+  add all of the ingredients chosen by the user.
 */
 const createCraftIngredients = (completion) => {
   const fetchArray = [];

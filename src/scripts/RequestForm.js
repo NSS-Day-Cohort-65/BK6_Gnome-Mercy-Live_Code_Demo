@@ -10,6 +10,9 @@ document.addEventListener("click", (clickEvt) => {
 });
 
 export const RequestForm = () => {
+
+  // add purpose input
+  // add type dropdown
   let html = `
     <div class="field flex column">
      <label class="label" for="name">Name</label>
