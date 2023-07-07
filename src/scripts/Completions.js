@@ -1,0 +1,4 @@
+/*
+  Responsibility
+    Generate the HTML for all completed potions and elixirs
+*/
